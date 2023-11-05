@@ -1,26 +1,24 @@
-![Screenshot 2023-09-10 at 13 12 53](https://github.com/IbroDante/EduNg/assets/53307395/e8b21c05-0dc3-45b9-a870-d9ae1cc63623)
-
 Project Name:
 
-EduNg - Educational Platform
+Osun State Recruitment webApp - Teacher's recruitment Platform
 
 Introduction:
 
-EduNg is an educational platform designed to facilitate the sharing of knowledge, ideas, and insights within the education community. This platform empowers educators, students, and enthusiasts to create, publish, and explore educational content. Whether you want to write articles on teaching methodologies, share learning resources, or discuss educational trends, EduNg provides the ideal space for collaboration and knowledge sharing.
+Osun State Recruitment webApp is an Teachers recruitment platform designed to facilitate the sharing of knowledge, ideas, and insights within the education community. This platform empowers educators, students, and enthusiasts to create, publish, and explore educational content. Whether you want to write articles on teaching methodologies, share learning resources, or discuss educational trends, EduNg provides the ideal space for collaboration and knowledge sharing.
 
 Deployed Site
 Final Project Blog Article
 Author(s): Ibrahim Balogun (LinkedIn)
 Installation:
 
-To run EduNg locally for development or testing, follow these steps:
+To run Recruitment app locally for development or testing, follow these steps:
 
 Clone the repository:
 
-git clone https://github.com/IbroDante/EduNg
+git clone https://github.com/IbroDante/TeachRecruitOsun
 Navigate to the project directory:
 
-cd edung
+cd TeachRecruitOsun
 Create a virtual environment (optional but recommended):
 
 python -m venv venv
@@ -42,13 +40,12 @@ flask db migrate
 flask db upgrade
 Start the development server:
 
-
 flask run
-Access EduNg in your web browser at http://localhost:5000.
+Access recruitment app in your web browser at http://localhost:5000.
 
 Usage:
 
-EduNg offers a user-friendly platform for educational content creators and learners. Here are some key features:
+TeachRecruitOsun offers a user-friendly platform for educational content creators and learners. Here are some key features:
 
 User Registration: Create an account to start sharing your knowledge or exploring educational content.
 
@@ -60,7 +57,7 @@ Interactive Community: Engage with the educational community by commenting on po
 
 Contributing:
 
-We welcome contributions from the open-source community to enhance EduNg. If you'd like to contribute, please follow these guidelines:
+We welcome contributions from the open-source community to enhance TeachRecruitOsun. If you'd like to contribute, please follow these guidelines:
 
 Fork the repository on GitHub.
 
@@ -68,10 +65,8 @@ Clone your forked repository to your local machine.
 
 Create a new branch for your feature or bug fix:
 
-
 git checkout -b feature/your-feature-name
 Make your changes, commit them, and push to your fork:
-
 
 git add .
 git commit -m "Your descriptive commit message"
@@ -82,9 +77,9 @@ Your PR will be reviewed, and upon approval, it will be merged into the main pro
 
 Related Projects:
 
-EduNg Frontend - The frontend part of the EduNg platform.
+TeachRecruitOsun Frontend - The frontend part of the TeachRecruitOsun platform.
 Licensing:
 
-EduNg is released under the NG License.
+TeachRecruitOsun is released under the NG License.
 
-Feel free to explore EduNg, contribute to its development, and join our educational community!
+Feel free to explore TeachRecruitOsun, contribute to its development, and join our educational community!
