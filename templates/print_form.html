@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {% block head %}
+<title>Osun Recruit | Print Form</title>
+{% endblock %} {% block body %}
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Your Form Submissions</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Your Photo</th>
+            <th>Registration Number</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Institution</th>
+            <th>Qualifications</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user_form in user_forms %}
+          <tr>
+            <td>
+              <img
+                src="{{ user_form.photo_path }}"
+                alt="Uploaded Photo"
+                width="100"
+              />
+            </td>
+
+            <td>{{ user_form.id }}</td>
+            <td>{{ user_form.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user_form.phonenumber }}</td>
+            <td>{{ user_form.institution }}</td>
+            <td>{{ user_form.qualification }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+{% endblock %}

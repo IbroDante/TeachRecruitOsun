@@ -1,38 +1,52 @@
 {% extends 'layout.html' %} {% block head %}
-<title>EduNg | Dashboard</title>
+<title>Osun Recruit | Dashboard</title>
 {% endblock %} {% block body %}
 <body>
   <div class="container mt-5">
     <h1 class="text-center">Welcome, {{ user.username }}!</h1>
     <h2 class="text-center">Your Form Submissions</h2>
+    {{ get_flashed_messages() }}
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th>Your Photo</th>
+            <th>Registration Number</th>
             <th>Name</th>
             <th>User Name</th>
             <th>Email</th>
             <th>Phone Number</th>
-            <th>Select Course</th>
-            <th>Select Course Time</th>
+            <th>Institution</th>
+            <th>Qualifications</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {% for user_form in user_forms %}
           <tr>
+            <td>
+              <img
+                src="{{ user_form.photo_path }}"
+                alt="Uploaded Photo"
+                width="100"
+              />
+            </td>
+
+            <td>{{ user_form.id }}</td>
             <td>{{ user_form.name }}</td>
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user_form.phonenumber }}</td>
-            <td>{{ user_form.selectcourse }}</td>
-            <td>{{ user_form.selectcoursetime }}</td>
+            <td>{{ user_form.institution }}</td>
+            <td>{{ user_form.qualification }}</td>
             <td>
               <a
-                href="{{ url_for('edit_form', form_id=user_form.id) }}"
+                href="{{ url_for('print_form', form_id=user_form.id) }}"
+                target="_blank"
                 class="btn btn-primary btn-sm"
-                >Edit</a
+                >Print Form</a
               >
+
               <button
                 class="btn btn-danger btn-sm"
                 onclick="deleteForm('{{ user_form.id }}')"
@@ -48,28 +62,3 @@
   </div>
 </body>
 {% endblock %}
-
-<script>
-  function deleteForm(formId) {
-    if (confirm("Are you sure you want to delete this form?")) {
-      // Send an AJAX request to delete the form by formId
-      fetch(`/delete_form/${formId}`, {
-        method: "DELETE",
-        headers: {
-          "X-CSRFToken": "{{ csrf_token() }}", // Add CSRF token if using Flask-WTF
-        },
-      })
-        .then((response) => {
-          if (response.ok) {
-            // Reload the page after successful deletion
-            location.reload();
-          } else {
-            alert("Failed to delete the form.");
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    }
-  }
-</script>

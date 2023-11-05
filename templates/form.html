@@ -1,5 +1,5 @@
 {% extends 'layout.html' %} {% block head %}
-<title>EduNg | Admission Form</title>
+<title>Osun State Teachers Recruitment | Form</title>
 {% endblock %} {% block body %}
 
 <body>
@@ -14,7 +14,9 @@
       <li class="breadcrumb-item">
         <a href="index.html">Home</a>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">Admission Form</li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Osun State Teacher's Recruitment Application Form
+      </li>
     </ol>
   </nav>
   <!-- breadcrumb -->
@@ -26,12 +28,20 @@
       <h3
         class="title text-capitalize font-weight-light text-dark text-center mb-5"
       >
-        Admission
+        Osun State Teacher's Recruitment Application
         <span class="font-weight-bold">form</span>
       </h3>
       <div class="register-form pt-md-4">
         <form action="{{ url_for('form') }}" method="POST">
           {{ form.hidden_tag() }}
+
+          <div class="form-group">
+            {{ form.photo_path.label(class="form-control") }} {{
+            form.photo_path(class="form-control", title="photo_path",
+            required="required") }} {% for error in form.photo_path.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+          </div>
 
           <div class="styled-input form-group">
             {{ form.name.label(class="form-control") }} {{
@@ -68,6 +78,14 @@
             {% endfor %}
           </div>
 
+          <div class="styled-input agile-styled-input-top form-group">
+            {{ form.marital.label(class="category2") }} {{
+            form.marital(class="category2", required="required") }} {% for error
+            in form.marital.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+          </div>
+
           <div class="styled-input form-group">
             {{ form.phonenumber.label(class="form-control", placeholder="Phone
             Number") }} {{ form.phonenumber(class="form-control",
@@ -78,17 +96,57 @@
           </div>
 
           <div class="styled-input agile-styled-input-top form-group">
-            {{ form.selectcourse.label(class="category2") }} {{
-            form.selectcourse(class="category2", required="required") }} {% for
-            error in form.selectcourse.errors %}
+            {{ form.institution.label(class="category2") }} {{
+            form.institution(class="category2", required="required") }} {% for
+            error in form.institution.errors %}
             <span class="text-danger">{{ error }}</span>
             {% endfor %}
           </div>
 
-          <div class="styled-input form-group">
-            {{ form.selectcoursetime.label(class="category2") }} {{
-            form.selectcoursetime(class="category2", required="required") }} {%
-            for error in form.selectcoursetime.errors %}
+          <div class="styled-input agile-styled-input-top form-group">
+            {{ form.qualification.label(class="category2") }} {{
+            form.qualification(class="category2", required="required") }} {% for
+            error in form.qualification.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="styled-input agile-styled-input-top form-group">
+            {{ form.grade.label(class="category2") }} {{
+            form.grade(class="category2", required="required") }} {% for error
+            in form.grade.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="styled-input agile-styled-input-top form-group">
+            {{ form.state.label(class="category2") }} {{
+            form.state(class="category2", required="required") }} {% for error
+            in form.state.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="styled-input agile-styled-input-top form-group">
+            {{ form.lga.label(class="category2") }} {{
+            form.lga(class="category2", required="required") }} {% for error in
+            form.lga.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="styled-input agile-styled-input-top form-group">
+            {{ form.trcn.label(class="category2") }} {{
+            form.trcn(class="category2", required="required") }} {% for error in
+            form.trcn.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="styled-input agile-styled-input-top form-group">
+            {{ form.courseofstudy.label(class="category2") }} {{
+            form.courseofstudy(class="category2", required="required") }} {% for
+            error in form.courseofstudy.errors %}
             <span class="text-danger">{{ error }}</span>
             {% endfor %}
           </div>
@@ -103,15 +161,6 @@
               }} {{ form.address(class="form-control", placeholder="Address",
               title="Please enter your Address", required="required") }} {% for
               error in form.address.errors %}
-              <span class="text-danger">{{ error }}</span>
-              {% endfor %}
-            </div>
-
-            <div class="form-group">
-              {{ form.line.label(class="form-control", placeholder="Line") }} {{
-              form.line(class="form-control", placeholder="Line", title="Please
-              enter your Line", required="required") }} {% for error in
-              form.line.errors %}
               <span class="text-danger">{{ error }}</span>
               {% endfor %}
             </div>
