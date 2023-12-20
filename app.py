@@ -181,7 +181,7 @@ class RegForm(FlaskForm):
     qualification = SelectField(validators=[InputRequired()], choices=[('select qualification', 'Select Qualification'), ('bachelors degree', 'Bachelors Degree'), ('hnd/nd', 'HND/ND'),
                                                                        ('nce', 'NCE'), ('others', 'Others')], render_kw={"placeholder": "Highest Qualification"})
 
-    grade = SelectField(validators=[InputRequired()], choices=[('select grade', 'Select Grade'), ('first class', 'First Class'), ('second class upper', 'Second Class Upper'),
+    grade = SelectField(validators=[InputRequired()], choices=[('select grade', 'Select Grade'), ('first class', 'First Class'), ('distingtion', 'Distingtion'), ('upper', 'Upper'), ('lower', 'Lower'), ('second class upper', 'Second Class Upper'),
                                                                ('second class lower', 'Second Class Lower'), ('third class', 'Third Class'), ('pass', 'Pass'), ('others', 'Others')], render_kw={"placeholder": "Grade"})
     state = SelectField(validators=[InputRequired()], choices=[('select state', 'Select State'), ('ondo state', 'Ondo State'), ('ogun state', 'Ogun state'),
                                                                ('osun state', 'Osun State'), ('oyo state', 'Oyo State'), ('ekiti state', 'Ekiti State'), ('others', 'Others')], render_kw={"placeholder": "State of Origin"})
